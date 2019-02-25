@@ -1,0 +1,29 @@
+{
+  "name": "michnaj-Hydraulika",
+  "version": "1.0.0",
+  "description": "Hydraulika",
+  "main": "index.js",
+  "scripts": {
+    "test": "michnaj-hydraulika"
+  },
+  "keywords": [
+    "ellipsis",
+    "bootstrap",
+    "sass",
+    "jquery"
+  ],
+  "author": "Jarosław Michna",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.4.1",
+    "eslint-config-defaults": "^9.0.0",
+    "eslint-plugin-dollar-sign": "^1.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jquery": "^1.2.1",
+    "grunt-eslint": "^20.0.0",
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0"
+  }
+}
