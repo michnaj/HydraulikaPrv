@@ -83,6 +83,10 @@ section
   height: 100vh
   border-bottom: 1px solid $border-color
   position: relative
+  .navbar
+    .navbar-brand
+      img
+        max-width: 245px
   nav
     background-color: $theme-dark-color
     border-bottom: 1px solid $theme-light-color
@@ -164,8 +168,7 @@ section
               object-position: 0 50%
 
 //SERVICES
-#services,
-#services-cards
+#services
   .card
     height: 100%
   .container
@@ -173,43 +176,29 @@ section
       padding: 30px 0
       [class*="col"]
         padding: 10px
-  .service-box
-    position: relative
-    margin: 5px
-    padding: 20px 10px
-    min-height: 400px
-    height: calc(100% - 20px)
-    text-align: center
-    border: 1px solid $border-color
-    border-radius: 10px
+  .card
     box-shadow: 5px 5px 15px darken($border-color, 20%)
-
-    .title
-      font-size: $base-font-size * 1.5
-    .image
-      margin: 20px auto
-      height: 220px
-      max-width: 300px
-      width: 80%
-      border: 1px solid $border-color
-      box-shadow: 5px 5px 15px darken($border-color, 20%)
-      overflow: hidden
-      img
-        height: 100%
-        width: 100%
-        object-fit: cover
-    .fa
-      padding-right: 5px
-.services-details-list
-  list-style: none
-  text-align: left
-  font-size: $base-font-size * 1.1
-  line-height: $base-font-size * 1.6
-  li
-    margin: 5px 0
-    .fa
-      color: darken($template-color, 10%)
-      padding-right: 10px
+    transition: .4s
+    &:hover
+      +scale(1.05, 1.05)
+      box-shadow: 5px 5px 15px $theme-dark-color
+    .card-body
+      padding: 0
+      .card-title
+        padding: 10px 20px
+        background: lighten($theme-dark-color, 5%)
+        color: white
+      .services-details-list
+        padding: 10px 20px
+        list-style: none
+        text-align: left
+        font-size: $base-font-size * 1.1
+        line-height: $base-font-size * 1.6
+        li
+          margin: 5px 0
+          .fa
+            color: darken($template-color, 10%)
+            padding-right: 10px
 
 // GALLERY
 .baguetteBox-button
@@ -291,7 +280,7 @@ section
     .navbar-brand
       display: block
       img
-        max-width: 300px
+        max-width: 245px
 
 @media ($tablets)
   #header
