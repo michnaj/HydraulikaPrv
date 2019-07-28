@@ -45,6 +45,30 @@ module.exports = function(grunt) {
           server: './'
         }
       }
+    },
+    cssmin: {
+      options: {
+        mergeIntoShorthands: false,
+        roundingPrecision: -1
+      },
+      target: {
+        files: {
+          'css/styles.min.css': ['css/cards-gallery.css', 'css/style.css']
+        }
+      }
+    },
+    imagemin: {
+      dynamic: {
+        options: {
+          optimizationLevel: 3
+        },
+        files: [{
+          expand: true,
+          cwd: 'images_src/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'images/'
+        }]
+      }
     }
   });
 
@@ -53,7 +77,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   // Default tasks
-  grunt.registerTask('default', ['sass', 'eslint', 'browserSync', 'watch']);
+  grunt.registerTask('default', ['sass', 'eslint', 'cssmin', 'browserSync', 'watch']);
 };
